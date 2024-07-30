@@ -8,9 +8,9 @@ class PksRubyTest < Minitest::Test
   end
 
   def test_it_does_something_useful
-    out, err = capture_subprocess_io do
+    out, _ = capture_subprocess_io do
       PksRuby.greet
     end
-    assert_match /👋 Hello! Welcome to packs 📦 🔥 🎉 🌈. This tool is under construction./, out
+    assert_match(/👋 Hello! Welcome to packs 📦 🔥 🎉 🌈. This tool is under construction./, out)
   end
 end
