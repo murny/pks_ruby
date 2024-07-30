@@ -2,14 +2,15 @@
 
 require "test_helper"
 
-class PksRubyTest < Test::Unit::TestCase
-  test "VERSION" do
-    assert do
-      ::PksRuby.const_defined?(:VERSION)
-    end
+class PksRubyTest < Minitest::Test
+  def test_it_has_a_version
+    assert ::PksRuby.const_defined?(:VERSION)
   end
 
-  test "something useful" do
-    assert_equal("expected", "actual")
+  def test_it_does_something_useful
+    out, err = capture_subprocess_io do
+      PksRuby.greet
+    end
+    assert_match /👋 Hello! Welcome to packs 📦 🔥 🎉 🌈. This tool is under construction./, out
   end
 end

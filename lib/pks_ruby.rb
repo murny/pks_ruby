@@ -6,4 +6,8 @@ require_relative "pks_ruby/pks_ruby"
 module PksRuby
   class Error < StandardError; end
   # Your code goes here...
+
+  def self.greet
+    hello # calls underlying rust pks greet function just as a test
+  end
 end
