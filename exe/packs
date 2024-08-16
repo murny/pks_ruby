@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup" # When we cut a gem, this line will be removed?
+require "pks_ruby"
+
+cli = PksRuby::Cli.instance
+cli.parse(ARGV)
+cli.run
